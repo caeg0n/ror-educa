@@ -17,19 +17,17 @@
 # #   <<: *default
 # #   database: db/test.sqlite3
 
-# production:
-#     adapter: postgresql
-#     database: primary_educa_prod
-#     pool: 5
-#     timeout: 5000
-
 development:
     adapter: postgresql
-    encoding: utf-8
     database: educa
     pool: 5
     timeout: 5000
-    username: kjeezeysmbnskd
-    password: dc325aeda7a19f
+    username: postgres
+    password: omega200
     # schema_search_path: "schema1,public"
     
+production:
+  adapter: postgresql
+  database: primary_educa_prod
+  pool: 5
+  timeout: 5000
