@@ -1,28 +1,24 @@
-default: &default
-  adapter: sqlite3
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
+# default: &default
+#   adapter: sqlite3
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   timeout: 5000
 
 development:
-  primary:
     adapter: postgresql
-    database: primary_educa_dev
-    pool: 5
-    timeout: 5000
-  primary_replica:
-    <<: *default
-    database: db/primary_replica_educa_dev.sqlite3
+    encoding: utf-8
+    host: ec2-34-194-40-194.compute-1.amazonaws.com
+    port: 5432
+    # schema_search_path: "schema1,public"
+    database: df2r2sr7p9qehp
+    username: kjeezeysmbnskd
+    password: dc325aeda7a19f4d9b4b13673d5524bda52c4b1f4f51c96389be526d54eba5eb
 
-test:
-  <<: *default
-  database: db/test.sqlite3
+# test:
+#   <<: *default
+#   database: db/test.sqlite3
 
 production:
-  primary:
     adapter: postgresql
     database: primary_educa_prod
     pool: 5
     timeout: 5000
-  primary_replica:
-    <<: *default
-    database: db/primary_replica_educa_dev.sqlite3

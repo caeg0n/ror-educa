@@ -1,9 +1,9 @@
 desc "criando device"
 task :migrations do
-  sh('rails db:create')
+  # sh('rails db:create')
   sh('rails db:environment:set RAILS_ENV=development')
-  sh('rails db:drop')
-  sh('rails db:create')
+  # sh('rails db:drop')
+  # sh('rails db:create')
   sh('rails d scaffold stundent')
   sh('rails g scaffold stundent name:string birth:date')
   # sh('rails d scaffold organization_device')
