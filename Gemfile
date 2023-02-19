@@ -1,11 +1,10 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-
 ruby "3.1.3"
-gem "rails", "~> 7.0.4", ">= 7.0.4.2"
-gem "sqlite3", "~> 1.4"
-gem "puma", "~> 5.0"
-gem "pg"
+gem "rails","= 7.0.4.2"
+gem "sqlite3","= 1.6.0"
+gem "puma", "= 5.6.5"
+gem "pg", "= 1.4.5"
 # gem "jbuilder"
 # gem "redis", "~> 4.0"
 # gem "kredis"

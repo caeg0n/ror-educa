@@ -167,10 +167,10 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
-  pg
-  puma (~> 5.0)
-  rails (~> 7.0.4, >= 7.0.4.2)
-  sqlite3 (~> 1.4)
+  pg (= 1.4.5)
+  puma (= 5.6.5)
+  rails (= 7.0.4.2)
+  sqlite3 (= 1.6.0)
   tzinfo-data
 
 RUBY VERSION
