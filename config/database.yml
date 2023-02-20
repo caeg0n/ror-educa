@@ -18,6 +18,16 @@
 # #   database: db/test.sqlite3
 
 development:
+  primary:
+    adapter: postgresql
+    database: educa
+    pool: 5
+    timeout: 5000
+    host: 192.168.1.252
+    port: 5432 
+    username: postgres
+    password: omega200
+  primary_replica:
     adapter: postgresql
     database: educa
     pool: 5
@@ -26,8 +36,39 @@ development:
     password: omega200
     # schema_search_path: "schema1,public"
     
-production:
-  adapter: postgresql
-  database: primary_educa_prod
-  pool: 5
-  timeout: 5000
+# production:
+#   adapter: postgresql
+#   host: 192.168.1.252
+#   database: educa
+#   pool: 5
+#   timeout: 5000
+
+
+# default: &default
+#   adapter: sqlite3
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   timeout: 5000
+
+# development:
+#   primary:
+#     adapter: postgresql
+#     database: primary_educa_dev
+#     pool: 5
+#     timeout: 5000
+#   primary_replica:
+#     <<: *default
+#     database: db/primary_replica_educa_dev.sqlite3
+
+# test:
+#   <<: *default
+#   database: db/test.sqlite3
+
+# production:
+#   primary:
+#     adapter: postgresql
+#     database: primary_educa_prod
+#     pool: 5
+#     timeout: 5000
+#   primary_replica:
+#     <<: *default
+#     database: db/primary_replica_educa_dev.sqlite3
