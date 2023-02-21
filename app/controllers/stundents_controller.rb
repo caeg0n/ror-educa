@@ -1,16 +1,22 @@
 class StundentsController < ApplicationController
-  before_action :set_stundent, only: %i[ show update destroy ]
+  before_action :set_stundent, only: %i[ show edit update destroy ]
 
   # GET /stundents
   def index
     @stundents = Stundent.all
-
-    render json: @stundents
   end
 
   # GET /stundents/1
   def show
-    render json: @stundent
+  end
+
+  # GET /stundents/new
+  def new
+    @stundent = Stundent.new
+  end
+
+  # GET /stundents/1/edit
+  def edit
   end
 
   # POST /stundents
@@ -18,24 +24,25 @@ class StundentsController < ApplicationController
     @stundent = Stundent.new(stundent_params)
 
     if @stundent.save
-      render json: @stundent, status: :created, location: @stundent
+      redirect_to @stundent, notice: "Stundent was successfully created."
     else
-      render json: @stundent.errors, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /stundents/1
   def update
     if @stundent.update(stundent_params)
-      render json: @stundent
+      redirect_to @stundent, notice: "Stundent was successfully updated."
     else
-      render json: @stundent.errors, status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
   # DELETE /stundents/1
   def destroy
     @stundent.destroy
+    redirect_to stundents_url, notice: "Stundent was successfully destroyed."
   end
 
   private

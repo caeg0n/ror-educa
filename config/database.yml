@@ -1,3 +1,24 @@
+# development:
+#   primary:
+#     adapter: postgresql
+#     database: educa
+#     pool: 5
+#     timeout: 5000
+#     host: "localhost"
+#     port: "5432" 
+#     username: "postgres"
+#     password: "omega200"
+#   primary_replica:
+#     adapter: postgresql
+#     host: "localhost"
+#     port: "5432"
+#     database: educa
+#     pool: 5
+#     timeout: 5000
+#     username: "postgres"
+#     password: "omega200"
+#     replica: true
+    #schema_search_path: "schema1,public"
 
 development:
   primary:
@@ -6,14 +27,17 @@ development:
     pool: 5
     timeout: 5000
     host: 192.168.1.252
-    port: 5432 
+    port: 5432
     username: postgres
     password: omega200
   primary_replica:
     adapter: postgresql
+    host: "localhost"
+    port: 5432
     database: educa
     pool: 5
     timeout: 5000
     username: postgres
     password: omega200
+    replica: true
     #schema_search_path: "schema1,public"
