@@ -3,7 +3,7 @@ require 'socket'
 require 'timeout'
 require 'yaml'
 
-hiera = YAML.load_file('config/database.yml')
+# hiera = YAML.load_file('config/database.yml')
 
 def port_open?(ip, port, seconds=1)
   Timeout::timeout(seconds) do
