@@ -21,7 +21,6 @@
     #schema_search_path: "schema1,public"
 
 development:
-  primary:
     adapter: postgresql
     database: educa
     pool: 5
