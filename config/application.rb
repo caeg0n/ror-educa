@@ -5,27 +5,27 @@ require 'yaml'
 
 # hiera = YAML.load_file('config/database.yml')
 
-def port_open?(ip, port, seconds=1)
-  Timeout::timeout(seconds) do
-    begin
-      TCPSocket.new(ip, port).close
-      true
-    rescue Errno::ECONNREFUSED, Errno::EHOSTUNREACH, SocketError
-      false
-    end
-  end
-  rescue Timeout::Error
-    false
-end
+# def port_open?(ip, port, seconds=1)
+#   Timeout::timeout(seconds) do
+#     begin
+#       TCPSocket.new(ip, port).close
+#       true
+#     rescue Errno::ECONNREFUSED, Errno::EHOSTUNREACH, SocketError
+#       false
+#     end
+#   end
+#   rescue Timeout::Error
+#     false
+# end
 
-HOST = '192.168.1.252'
-PORT = '5432'
+# HOST = '192.168.1.252'
+# PORT = '5432'
 
-if port_open?(HOST, PORT)
-  $POSTGRES_REPLICA = :primary
-else
-  $POSTGRES_REPLICA = :primary_replica
-end
+# if port_open?(HOST, PORT)
+#   $POSTGRES_REPLICA = :primary
+# else
+#   $POSTGRES_REPLICA = :primary_replica
+# end
 
 # Timeout::timeout(2) do
 #     begin
@@ -63,6 +63,6 @@ module Educa
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
-    config.api_only = false
+    config.api_only = true
   end
 end

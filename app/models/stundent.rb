@@ -1,2 +1,2 @@
-class Stundent < ApplicationRecord
+class Stundent < ActiveRecord::Base
 end

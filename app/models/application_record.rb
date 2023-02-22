@@ -5,5 +5,5 @@ class ApplicationRecord < ActiveRecord::Base
   #   writing: :primary,
   #   reading: :primary_replica
   # } 
-  establish_connection $POSTGRES_REPLICA
+  # establish_connection $POSTGRES_REPLICA
 end
