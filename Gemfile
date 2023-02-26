@@ -11,8 +11,6 @@ gem 'sassc-rails', '= 2.1.2'
 gem 'rack-cors', '= 1.1.1'
 gem 'jwt', '= 2.6.0'
 gem 'bcrypt', '= 3.1.18'
-gem 'rails_admin-i18n'
-gem 'font-awesome-rails'
 
 # gem "jbuilder"
 # gem "redis", "~> 4.0"
@@ -21,6 +19,8 @@ gem 'font-awesome-rails'
 # gem "image_processing", "~> 1.2"
 # gem "rack-cors"
 #gem "sqlite3","= 1.6.0"
+#gem 'rails_admin-i18n'
+
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end

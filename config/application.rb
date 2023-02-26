@@ -44,8 +44,8 @@ Bundler.require(*Rails.groups)
 
 module Educa
   class Application < Rails::Application
-    config.i18n.available_locales = [:'pt-BR',:en]
-    config.enforce_available_locales = false
+    config.i18n.available_locales = [:en,:pt]
+    config.i18n.default_locale = :pt
     config.time_zone = 'Buenos Aires'
     #setup inicial
     config.title = 'SEMED SIS'
