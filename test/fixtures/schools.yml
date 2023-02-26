@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address: MyString
+  locality: one
+  modality: one
+
+two:
+  name: MyString
+  address: MyString
+  locality: two
+  modality: two
