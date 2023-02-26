@@ -12,6 +12,7 @@ gem 'rack-cors', '= 1.1.1'
 gem 'jwt', '= 2.6.0'
 gem 'bcrypt', '= 3.1.18'
 gem 'rails_admin-i18n'
+gem 'font-awesome-rails'
 
 # gem "jbuilder"
 # gem "redis", "~> 4.0"

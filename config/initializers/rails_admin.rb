@@ -1,8 +1,27 @@
-require 'i18n' 
-I18n.default_locale = :'pt-BR' 
+ RailsAdmin.config do |config|
+  I18n.locale = :'pt-BR'
+  # config.parent_controller = RailsAdmin::RailsAdminAbstractController.to_s
+  # config.asset_source = :sprockets
+  config.main_app_name = ["SEMED", "SISTEMA DE INFORMAÇÃO 2023"]
 
-RailsAdmin.config do |config|
-  config.asset_source = :sprockets
+  config.included_models = ['Student','School','Locality','Modality']
+  config.model 'Student' do
+    label 'Aluno'
+    label_plural 'Alunos'
+  end
+  config.model 'School' do
+    label 'Escola'
+    label_plural 'Escolas'
+  end
+  config.model 'Locality' do
+    label 'Localidade'
+    label_plural 'Localidades'
+  end
+  config.model 'Modality' do
+    label 'Modalidade'
+    label_plural 'Modalidades'
+  end
+
 
   ### Popular gems integration
 
@@ -36,7 +55,7 @@ RailsAdmin.config do |config|
     show
     edit
     delete
-    show_in_app
+    #show_in_app
 
     ## With an audit adapter, you can add:
     # history_index

@@ -38,20 +38,29 @@ require 'yaml'
 
 # puts $x
 require "rails/all"
-
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
 module Educa
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
+    config.i18n.available_locales = [:'pt-BR',:en]
+    config.enforce_available_locales = false
+    config.time_zone = 'Buenos Aires'
+    #setup inicial
+    config.title = 'SEMED SIS'
     config.load_defaults 7.0
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Flash
     config.middleware.use Rack::MethodOverride
     config.middleware.use ActionDispatch::Session::CookieStore, {:key=>"_educa_session"}
-
+    # config.after_initialize do
+    #   RailsAdmin::Config::Fields::Types::DatetimePicker::DefaultOptions = {
+    #     format: 'd/m/Y H:i',
+    #     enableTime: true,
+    #     locale: 'pt-BR'
+    #   }
+    # end
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

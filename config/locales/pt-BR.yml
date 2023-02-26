@@ -153,6 +153,30 @@ pt-BR:
               blank: "Usuário e Senha Invalido!" 
   # ActiveRecord
   activerecord:
+    models:
+      student: "Aluno"
+      school: "Escola"
+      modality: "Modaliadade"
+      locality: "Localidade"
+    attributes:
+      student:
+        name: "Nome"
+        birth: "Data de Nascimento"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+      school:
+        name: "Nome"
+        address: "Endereço"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+      locality:
+        name: "Nome"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+      modality:
+        name: "Nome"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
     errors:
       template:
         header:
@@ -247,21 +271,22 @@ pt-BR:
       message: Mensagem
     actions:
       dashboard:
-        title: Administração do site
+        title: Administração do sistema
         menu: Dashboard
         breadcrumb: Dashboard
       index:
         title: Lista de %{model_label_plural}
         menu: Listar
         breadcrumb: Lista de %{model_label_plural}
+        no_records: "Nenhum registro encontrado"
       show:
-        title: Mostra
+        title: Visualizar
         menu: Mostrar
         breadcrumb: Mostrar "%{object_label}"
       show_in_app:
         menu: Mostrar no app
       new:
-        title: Novo %{model_label}
+        title: Nova %{model_label}
         menu: Adicionar novo
         breadcrumb: Novo
         link: Adicionar novo %{model_label}

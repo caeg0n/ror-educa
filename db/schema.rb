@@ -10,15 +10,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_22_125609) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_24_014457) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "stundents", force: :cascade do |t|
+  create_table "localities", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "modalities", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.bigint "locality_id", null: false
+    t.bigint "modality_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["locality_id"], name: "index_schools_on_locality_id"
+    t.index ["modality_id"], name: "index_schools_on_modality_id"
+  end
+
+  create_table "students", force: :cascade do |t|
     t.string "name"
     t.date "birth"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "teachers", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.bigint "school_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["school_id"], name: "index_teachers_on_school_id"
+  end
+
+  add_foreign_key "schools", "localities"
+  add_foreign_key "schools", "modalities"
+  add_foreign_key "teachers", "schools"
 end

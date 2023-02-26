@@ -1,4 +1,5 @@
 class ApplicationRecord < ActiveRecord::Base
+  self.abstract_class = true
   #self.abstract_class = true
   # # to set the role for switch the database.
   # connects_to database: {

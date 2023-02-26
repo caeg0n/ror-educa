@@ -1,11 +1,32 @@
+require 'fileutils'
 desc "criando banco"
 task :migrations do
   #sh('rails db:environment:set RAILS_ENV=development')
+  project_path = Rails.root.to_s
   sh('rails db:create')
   sh('rails db:drop')
   sh('rails db:create')
-  sh('rails d scaffold stundent')
-  sh('rails g scaffold stundent name:string birth:date')
+  FileUtils.cp("#{project_path}/app/models/student.rb", "#{project_path}/app/models/backup")
+  FileUtils.cp("#{project_path}/app/models/school.rb", "#{project_path}/app/models/backup")
+  FileUtils.cp("#{project_path}/app/models/teacher.rb", "#{project_path}/app/models/backup")
+  FileUtils.cp("#{project_path}/app/models/locality.rb", "#{project_path}/app/models/backup")
+  FileUtils.cp("#{project_path}/app/models/modality.rb", "#{project_path}/app/models/backup")
+  sh('rails d scaffold student')
+  sh('rails d scaffold school')
+  sh('rails d scaffold teacher')
+  sh('rails d scaffold locality')
+  sh('rails d scaffold modality')
+  sh('rails g scaffold student name:string birth:date')
+  sh('rails g scaffold locality name:string')
+  sh('rails g scaffold modality name:string')
+  sh('rails g scaffold school name:string address:string locality:references modality:references')
+  sh('rails g scaffold teacher name:string email:string phone:string school:references')
+  FileUtils.cp("#{project_path}/app/models/backup/student.rb","#{project_path}/app/models")
+  FileUtils.cp("#{project_path}/app/models/backup/school.rb", "#{project_path}/app/models")
+  FileUtils.cp("#{project_path}/app/models/backup/teacher.rb", "#{project_path}/app/models")
+  FileUtils.cp("#{project_path}/app/models/backup/locality.rb", "#{project_path}/app/models")
+  FileUtils.cp("#{project_path}/app/models/backup/modality.rb", "#{project_path}/app/models")
+  
   #sh('rails d scaffold organization_device')
   # sh('rails d scaffold plan')
   # sh('rails d scaffold promo')
@@ -25,5 +46,6 @@ task :migrations do
   # sh('rails g scaffold promo_product_info promo:references product:references product_amount:integer')
   # sh('rails g scaffold rule rule_type:integer promo:references')
   # sh('rails g scaffold coupon promo:references cod:string state:integer device_uuid:string')
+  FileUtils.rm Dir.glob("#{project_path}/app/models/backup/*")
   sh('rails db:migrate')
 end
