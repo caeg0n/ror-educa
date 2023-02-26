@@ -10,7 +10,8 @@ class School < ApplicationRecord
   rails_admin do
     label "Escola"
     label_plural "Escolas"
-    weight 0
+    weight -1
+    navigation_icon 'fas fa-school'
     edit do
       include_fields :name,:address,:locality,:modality
       configure :name do
@@ -43,6 +44,15 @@ class School < ApplicationRecord
         label "Modalidade"
       end
     end
+    export do
+      field :locality do
+        label 'localidade'
+      end
+      field :modality do
+        label 'modalidade'
+      end
+    end
+    
   end
 
 end

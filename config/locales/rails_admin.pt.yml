@@ -272,8 +272,8 @@ pt:
     actions:
       dashboard:
         title: Administração do sistema
-        menu: Dashboard
-        breadcrumb: Dashboard
+        menu: Inicio
+        breadcrumb: Inicio
       index:
         title: Lista de %{model_label_plural}
         menu: Listar
