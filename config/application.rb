@@ -3,6 +3,13 @@ require 'socket'
 require 'timeout'
 require 'yaml'
 
+$THEME_COLOR = "#CD2527"
+$THEME_COLOR_PRIMARY = $THEME_COLOR;
+$THEME_COLOR_INFO = $THEME_COLOR; 
+$THEME_COLOR_DANGER = $THEME_COLOR; 
+$THEME_COLOR_WARNING = $THEME_COLOR;
+$THEME_COLOR_SUCESS = $THEME_COLOR;
+
 # hiera = YAML.load_file('config/database.yml')
 
 # def port_open?(ip, port, seconds=1)
