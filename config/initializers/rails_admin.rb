@@ -1,7 +1,10 @@
  RailsAdmin.config do |config|
   # config.parent_controller = RailsAdmin::RailsAdminAbstractController.to_s
   config.asset_source = :sprockets
-  config.main_app_name = ["SEMED", "SISTEMA DE INFORMAÇÃO 2023"]
+  config.main_app_name = ["SEMED -", " SISTEMA DE INFORMAÇÃO 2023"]
+  config.navigation_static_links = { 'label' => 'fffff',
+    'Relatorios' => 'http://google.com'.html_safe
+  }
 
   config.included_models = ['Student','School','Locality','Modality']
   config.model 'Student' do

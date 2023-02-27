@@ -29,3 +29,13 @@ development:
     port: 5432
     username: postgres
     password: omega200
+
+production:
+    adapter: postgresql
+    database: educa
+    pool: 5
+    timeout: 5000
+    host: 192.168.1.252
+    port: 5432
+    username: postgres
+    password: omega200

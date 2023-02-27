@@ -3,7 +3,8 @@ require 'socket'
 require 'timeout'
 require 'yaml'
 
-$THEME_COLOR = "#CD2527"
+$THEME_COLOR = "#011f4b"
+#$THEME_COLOR = "#b3cde0"
 $THEME_COLOR_PRIMARY = $THEME_COLOR;
 $THEME_COLOR_INFO = $THEME_COLOR; 
 $THEME_COLOR_DANGER = $THEME_COLOR; 
