@@ -248,7 +248,7 @@ pt:
       clear_all: Limpar todos
       up: Para cima
       down: Para baixo
-      navigation: Navegação
+      navigation: Cadastro
       navigation_static_label: "Links"
       log_out: Sair
       ago: Atrás

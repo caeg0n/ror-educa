@@ -2,11 +2,13 @@
   # config.parent_controller = RailsAdmin::RailsAdminAbstractController.to_s
   config.asset_source = :sprockets
   config.main_app_name = ["SEMED -", " SISTEMA DE INFORMAÇÃO 2023"]
-  config.navigation_static_links = { 'label' => 'fffff',
-    'Relatorios' => 'http://google.com'.html_safe
-  }
+    
+  # config.navigation_static_links = { 'label' => 'fffff',
+  #   'Relatorios' => 'http://google.com'.html_safe
+  # }
 
-  config.included_models = ['Student','School','Locality','Modality']
+  config.included_models = ['Student','School','Locality','Modality','Teacher','Course',
+                            'TeacherSchoolInfo','CourseTeacherSchoolInfo']
   config.model 'Student' do
     label 'Aluno'
     label_plural 'Alunos'
@@ -23,7 +25,14 @@
     label 'Modalidade'
     label_plural 'Modalidades'
   end
-
+  config.model 'Teacher' do
+    label 'Professor'
+    label_plural 'Professores'
+  end
+  config.model 'Course' do
+    label 'Materia'
+    label_plural 'Materias'
+  end
 
   ### Popular gems integration
 

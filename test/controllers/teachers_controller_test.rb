@@ -12,7 +12,7 @@ class TeachersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create teacher" do
     assert_difference("Teacher.count") do
-      post teachers_url, params: { teacher: { email: @teacher.email, name: @teacher.name, phone: @teacher.phone, school_id: @teacher.school_id } }, as: :json
+      post teachers_url, params: { teacher: { mail: @teacher.mail, name: @teacher.name, phone: @teacher.phone } }, as: :json
     end
 
     assert_response :created
@@ -24,7 +24,7 @@ class TeachersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update teacher" do
-    patch teacher_url(@teacher), params: { teacher: { email: @teacher.email, name: @teacher.name, phone: @teacher.phone, school_id: @teacher.school_id } }, as: :json
+    patch teacher_url(@teacher), params: { teacher: { mail: @teacher.mail, name: @teacher.name, phone: @teacher.phone } }, as: :json
     assert_response :success
   end
 

@@ -1,7 +1,41 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
+require 'digest/md5'
+
+Faker::Config.locale = 'pt'
+
+TeacherSchoolInfo.destroy_all
+CourseTeacherSchoolInfo.destroy_all
+Student.destroy_all
+School.destroy_all
+Modality.destroy_all
+Locality.destroy_all
+Teacher.destroy_all
+Course.destroy_all
+10.times do |n|
+    Modality.create(name:Faker::Color.color_name)
+end
+20.times do |n|
+    Locality.create(name:Faker::Address.city)
+end
+50.times do |n|
+    School.create(name:Faker::Educator.university,
+                  address:Faker::Address.street_address,
+                  locality_id:rand(Locality.first.id..Locality.last.id),
+                  modality_id:rand(Modality.first.id..Modality.last.id))
+end
+500.times do |n|
+    Student.create(name:Faker::Name.name_with_middle,
+                    birth:Faker::Date.birthday(min_age: 6, max_age: 65))
+end
+
+15.times do |n|
+    Teacher.create(name:Faker::Name.name_with_middle,mail:Faker::Internet.email,phone:Faker::PhoneNumber.cell_phone)
+end
+
+15.times do |n|
+    TeacherSchoolInfo.create(school_id:rand(School.first.id..School.last.id),teacher_id:Teacher.first.id..Teacher.last.id)
+end
+
+10.times do |n|
+    Course.create(name:Faker::Educator.unique.subject)
+end
