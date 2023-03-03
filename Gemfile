@@ -12,6 +12,7 @@ gem 'rack-cors', '= 1.1.1'
 gem 'jwt', '= 2.6.0'
 gem 'bcrypt', '= 3.1.18'
 gem 'faker', '= 3.1.1'
+gem 'rubyrep'
 
 # gem "jbuilder"
 # gem "redis", "~> 4.0"

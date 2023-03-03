@@ -3,14 +3,15 @@ require 'digest/md5'
 
 Faker::Config.locale = 'pt'
 
-TeacherSchoolInfo.destroy_all
-CourseTeacherSchoolInfo.destroy_all
 Student.destroy_all
+CourseTeacherSchoolInfo.destroy_all
+Course.destroy_all
+TeacherSchoolInfo.destroy_all
+Teacher.destroy_all
 School.destroy_all
 Modality.destroy_all
 Locality.destroy_all
-Teacher.destroy_all
-Course.destroy_all
+
 10.times do |n|
     Modality.create(name:Faker::Color.color_name)
 end
@@ -23,7 +24,7 @@ end
                   locality_id:rand(Locality.first.id..Locality.last.id),
                   modality_id:rand(Modality.first.id..Modality.last.id))
 end
-500.times do |n|
+2000.times do |n|
     Student.create(name:Faker::Name.name_with_middle,
                     birth:Faker::Date.birthday(min_age: 6, max_age: 65))
 end

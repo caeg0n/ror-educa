@@ -11,7 +11,7 @@ $THEME_COLOR_DANGER = $THEME_COLOR;
 $THEME_COLOR_WARNING = $THEME_COLOR;
 $THEME_COLOR_SUCESS = $THEME_COLOR;
 
-# hiera = YAML.load_file('config/database.yml')
+# db = YAML.load_file('config/database.yml')
 
 # def port_open?(ip, port, seconds=1)
 #   Timeout::timeout(seconds) do
@@ -36,12 +36,12 @@ $THEME_COLOR_SUCESS = $THEME_COLOR;
 # end
 
 # Timeout::timeout(2) do
-#     begin
-#       TCPSocket.new('192.168.1.252', '5432').close
-#       $x = :primary
+#   begin
+#     TCPSocket.new('192.168.1.252', '5432').close
+#     $x = :primary
 #     rescue Errno::ECONNREFUSED, Errno::EHOSTUNREACH, SocketError
-#       $x = :primary_replica
-#     end
+#     $x = :primary_replica
+#   end
 # end
 
 # puts $x
