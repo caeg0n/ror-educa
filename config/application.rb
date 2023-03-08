@@ -2,6 +2,7 @@ require_relative "boot"
 require 'socket'
 require 'timeout'
 require 'yaml'
+require 'pg'
 
 $THEME_COLOR = "#011f4b"
 #$THEME_COLOR = "#b3cde0"
@@ -10,6 +11,11 @@ $THEME_COLOR_INFO = $THEME_COLOR;
 $THEME_COLOR_DANGER = $THEME_COLOR; 
 $THEME_COLOR_WARNING = $THEME_COLOR;
 $THEME_COLOR_SUCESS = $THEME_COLOR;
+
+#cria a publicação de todas as tabelas no postgres
+# conn = PG.connect(dbname: 'educa', user: 'postgres', password: 'omega200', host: 'localhost', port: '5432')
+# publication_name = 'carlos'
+# conn.exec("CREATE PUBLICATION #{publication_name} FOR ALL TABLES;")
 
 # db = YAML.load_file('config/database.yml')
 

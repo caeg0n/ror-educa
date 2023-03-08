@@ -11,8 +11,8 @@ gem 'sassc-rails', '= 2.1.2'
 gem 'rack-cors', '= 1.1.1'
 gem 'jwt', '= 2.6.0'
 gem 'bcrypt', '= 3.1.18'
-gem 'faker', '= 3.1.1'
-gem 'rubyrep'
+
+#gem 'rubyrep'
 
 # gem "jbuilder"
 # gem "redis", "~> 4.0"
@@ -30,6 +30,7 @@ group :development do
   gem 'pry-rails', '= 0.3.9'
   gem 'pry-awesome_print', '= 9.6.11'
   gem "awesome_print", '= 1.9.2'
+  gem 'faker', '= 3.1.1'
   # gem "spring"
 end
 
