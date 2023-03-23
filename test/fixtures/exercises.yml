@@ -1,9 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  birth: 2023-03-23
+  year: 1
 
 two:
-  name: MyString
-  birth: 2023-03-23
+  year: 1

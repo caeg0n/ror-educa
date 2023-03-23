@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_03_164914) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_23_153356) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,6 +29,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_03_164914) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "exercises", force: :cascade do |t|
+    t.integer "year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "localities", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -39,6 +45,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_03_164914) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "responsibles", force: :cascade do |t|
+    t.string "name"
+    t.bigint "student_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_responsibles_on_student_id"
   end
 
   create_table "schools", force: :cascade do |t|
@@ -86,6 +100,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_03_164914) do
 
   add_foreign_key "course_teacher_school_infos", "courses"
   add_foreign_key "course_teacher_school_infos", "teacher_school_infos"
+  add_foreign_key "responsibles", "students"
   add_foreign_key "schools", "localities"
   add_foreign_key "schools", "modalities"
   add_foreign_key "teacher_school_infos", "schools"

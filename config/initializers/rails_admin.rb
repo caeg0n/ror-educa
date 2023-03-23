@@ -8,7 +8,7 @@
   # }
 
   config.included_models = ['Student','School','Locality','Modality','Teacher','Course',
-                            'TeacherSchoolInfo','CourseTeacherSchoolInfo']
+                            'TeacherSchoolInfo','CourseTeacherSchoolInfo','Responsible']
   config.model 'Student' do
     label 'Aluno'
     label_plural 'Alunos'
