@@ -46,6 +46,6 @@ class ResponsiblesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def responsible_params
-      params.require(:responsible).permit(:name, :student_id)
+      params.require(:responsible).permit(:name, :student_id, :phone)
     end
 end

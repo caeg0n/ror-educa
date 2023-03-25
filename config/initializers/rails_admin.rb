@@ -8,7 +8,8 @@
   # }
 
   config.included_models = ['Student','School','Locality','Modality','Teacher','Course',
-                            'TeacherSchoolInfo','CourseTeacherSchoolInfo','Responsible']
+                            'TeacherSchoolInfo','CourseTeacherSchoolInfo','Responsible',
+                            'Exercise']
   config.model 'Student' do
     label 'Aluno'
     label_plural 'Alunos'
@@ -32,6 +33,14 @@
   config.model 'Course' do
     label 'Materia'
     label_plural 'Materias'
+  end
+  config.model 'Responsible' do
+    label 'Responsavel'
+    label_plural 'Responsaveis'
+  end
+  config.model 'Exercise' do
+    label 'Exercicio'
+    label_plural 'Exercicios'
   end
 
   ### Popular gems integration

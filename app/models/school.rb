@@ -2,8 +2,6 @@ class School < ApplicationRecord
   belongs_to :locality
   belongs_to :modality
   
-
-
   # I18n.t('admin.actions.new.title', model_label: 'Escola', gender_caracter: 'a')
   # def x
   #   I18n.t('admin.actions.new.title', gender_caracter: "o")

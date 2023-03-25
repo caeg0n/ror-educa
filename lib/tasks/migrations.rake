@@ -29,8 +29,8 @@ task :migrations do
   sh('rails d scaffold course_teacher_school_info')
   
   sh('rails g scaffold exercise year:integer')
-  sh('rails g scaffold student name:string birth:date')
-  sh('rails g scaffold responsible name:string student:references')
+  sh('rails g scaffold student name:string birth:date inep:string transportation:integer status:integer')
+  sh('rails g scaffold responsible name:string student:references phone:string')
   sh('rails g scaffold locality name:string')
   sh('rails g scaffold modality name:string')
   sh('rails g scaffold school name:string address:string locality:references modality:references')

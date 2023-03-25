@@ -3,7 +3,9 @@
 one:
   name: MyString
   student: one
+  phone: MyString
 
 two:
   name: MyString
   student: two
+  phone: MyString

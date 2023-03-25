@@ -3,6 +3,7 @@ class CreateResponsibles < ActiveRecord::Migration[7.0]
     create_table :responsibles do |t|
       t.string :name
       t.references :student, null: false, foreign_key: true
+      t.string :phone
 
       t.timestamps
     end

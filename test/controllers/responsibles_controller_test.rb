@@ -12,7 +12,7 @@ class ResponsiblesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create responsible" do
     assert_difference("Responsible.count") do
-      post responsibles_url, params: { responsible: { name: @responsible.name, student_id: @responsible.student_id } }, as: :json
+      post responsibles_url, params: { responsible: { name: @responsible.name, phone: @responsible.phone, student_id: @responsible.student_id } }, as: :json
     end
 
     assert_response :created
@@ -24,7 +24,7 @@ class ResponsiblesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update responsible" do
-    patch responsible_url(@responsible), params: { responsible: { name: @responsible.name, student_id: @responsible.student_id } }, as: :json
+    patch responsible_url(@responsible), params: { responsible: { name: @responsible.name, phone: @responsible.phone, student_id: @responsible.student_id } }, as: :json
     assert_response :success
   end
 

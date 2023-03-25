@@ -2,8 +2,14 @@
 
 one:
   name: MyString
-  birth: 2023-03-23
+  birth: 2023-03-24
+  inep: MyString
+  transportation: 1
+  status: 1
 
 two:
   name: MyString
-  birth: 2023-03-23
+  birth: 2023-03-24
+  inep: MyString
+  transportation: 1
+  status: 1

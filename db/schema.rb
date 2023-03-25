@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_23_153356) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_24_182712) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,6 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_23_153356) do
   create_table "responsibles", force: :cascade do |t|
     t.string "name"
     t.bigint "student_id", null: false
+    t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["student_id"], name: "index_responsibles_on_student_id"
@@ -69,6 +70,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_23_153356) do
   create_table "students", force: :cascade do |t|
     t.string "name"
     t.date "birth"
+    t.string "inep"
+    t.integer "transportation"
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

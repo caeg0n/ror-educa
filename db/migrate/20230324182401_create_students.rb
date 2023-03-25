@@ -3,6 +3,9 @@ class CreateStudents < ActiveRecord::Migration[7.0]
     create_table :students do |t|
       t.string :name
       t.date :birth
+      t.string :inep
+      t.integer :transportation
+      t.integer :status
 
       t.timestamps
     end
