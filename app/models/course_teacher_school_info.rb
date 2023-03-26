@@ -2,6 +2,7 @@ class CourseTeacherSchoolInfo < ApplicationRecord
   belongs_to :course
   belongs_to :teacher_school_info
 
+
   rails_admin do
     # weight -1
     navigation_icon 'fas fa-plus'
@@ -13,7 +14,10 @@ class CourseTeacherSchoolInfo < ApplicationRecord
       end
       configure :teacher_school_info do
         label "Professor na escola"
+        html_attributes id: "xxxxx"
       end
+    end
+    list do
     end
   end
 

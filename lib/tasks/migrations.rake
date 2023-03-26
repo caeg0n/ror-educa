@@ -25,6 +25,7 @@ task :migrations do
   sh('rails d scaffold modality')
   sh('rails d scaffold teacher')
   sh('rails d scaffold course')
+  sh('rails d scaffold classroom')
   sh('rails d scaffold teacher_school_info')
   sh('rails d scaffold course_teacher_school_info')
   
@@ -36,6 +37,7 @@ task :migrations do
   sh('rails g scaffold school name:string address:string locality:references modality:references')
   sh('rails g scaffold teacher name:string mail:string phone:string')
   sh('rails g scaffold course name:string')
+  sh('rails g scaffold classroom name:string exercise:references school:references')
   sh('rails g scaffold teacher_school_info school:references teacher:references')
   sh('rails g scaffold course_teacher_school_info course:references teacher_school_info:references')
 
@@ -46,7 +48,8 @@ task :migrations do
   FileUtils.cp("#{project_path}/app/models/backup/locality.rb", "#{project_path}/app/models") if File.exist?("#{project_path}/app/models/backup/locality.rb")
   FileUtils.cp("#{project_path}/app/models/backup/modality.rb", "#{project_path}/app/models") if File.exist?("#{project_path}/app/models/backup/modality.rb")
   FileUtils.cp("#{project_path}/app/models/backup/teacher.rb", "#{project_path}/app/models") if File.exist?("#{project_path}/app/models/backup/teacher.rb")
-  FileUtils.cp("#{project_path}/app/models/backup/course.rb", "#{project_path}/app/models") if File.exist?("#{project_path}/app/models/backup/course.rb") 
+  FileUtils.cp("#{project_path}/app/models/backup/course.rb", "#{project_path}/app/models") if File.exist?("#{project_path}/app/models/backup/course.rb")
+  FileUtils.cp("#{project_path}/app/models/backup/classroom.rb", "#{project_path}/app/models") if File.exist?("#{project_path}/app/models/backup/classroom.rb") 
   FileUtils.cp("#{project_path}/app/models/backup/teacher_school_info.rb", "#{project_path}/app/models") if File.exist?("#{project_path}/app/models/backup/teacher_school_info.rb")
   FileUtils.cp("#{project_path}/app/models/backup/course_teacher_school_info.rb", "#{project_path}/app/models") if File.exist?("#{project_path}/app/models/backup/course_teacher_school_info.rb")
   

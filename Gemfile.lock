@@ -233,6 +233,7 @@ DEPENDENCIES
   rails (= 7.0.4.2)
   rails_admin (= 3.1.1)
   sassc-rails (= 2.1.2)
+  sprockets-rails
   tzinfo-data
 
 RUBY VERSION

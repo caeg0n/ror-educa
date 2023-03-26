@@ -1,15 +1,14 @@
  RailsAdmin.config do |config|
   # config.parent_controller = RailsAdmin::RailsAdminAbstractController.to_s
   config.asset_source = :sprockets
-  config.main_app_name = ["SEMED -", " SISTEMA DE INFORMAÇÃO 2023"]
-    
+  config.main_app_name = ["SEMED -", " SISTEMA DE INFORMAÇÃO 2023 - REDE"] 
   # config.navigation_static_links = { 'label' => 'fffff',
   #   'Relatorios' => 'http://google.com'.html_safe
   # }
 
   config.included_models = ['Student','School','Locality','Modality','Teacher','Course',
                             'TeacherSchoolInfo','CourseTeacherSchoolInfo','Responsible',
-                            'Exercise']
+                            'Exercise','Classroom']
   config.model 'Student' do
     label 'Aluno'
     label_plural 'Alunos'
@@ -41,6 +40,10 @@
   config.model 'Exercise' do
     label 'Exercicio'
     label_plural 'Exercicios'
+  end
+  config.model 'Classroom' do
+    label 'Classe'
+    label_plural 'Classes'
   end
 
   ### Popular gems integration
