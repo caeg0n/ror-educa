@@ -115,6 +115,7 @@ GEM
       net-pop
       net-smtp
     marcel (1.0.2)
+    maskmoney-rails (3.0.2.0)
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.18.0)
@@ -133,6 +134,7 @@ GEM
     nokogiri (1.14.2-x64-mingw-ucrt)
       racc (~> 1.4)
     pg (1.4.5-x64-mingw-ucrt)
+    phonemask-rails-brasil (0.2.0)
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -225,7 +227,9 @@ DEPENDENCIES
   debug
   faker (= 3.1.1)
   jwt (= 2.6.0)
+  maskmoney-rails
   pg (= 1.4.5)
+  phonemask-rails-brasil
   pry-awesome_print (= 9.6.11)
   pry-rails (= 0.3.9)
   puma (= 5.6.5)
@@ -233,7 +237,6 @@ DEPENDENCIES
   rails (= 7.0.4.2)
   rails_admin (= 3.1.1)
   sassc-rails (= 2.1.2)
-  sprockets-rails
   tzinfo-data
 
 RUBY VERSION

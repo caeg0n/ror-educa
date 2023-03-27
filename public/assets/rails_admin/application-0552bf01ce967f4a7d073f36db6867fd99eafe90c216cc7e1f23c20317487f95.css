@@ -24964,8 +24964,48 @@ body.rails_admin .pagination .page-item {
 }
 
 /* line 8, app/assets/stylesheets/rails_admin/custom/theming.css.scss */
-#xxxxx {
-  width: 202% !important;
+#exercise_year {
+  width: 10% !important;
+}
+
+/* line 12, app/assets/stylesheets/rails_admin/custom/theming.css.scss */
+#locality_name {
+  width: 50% !important;
+}
+
+/* line 16, app/assets/stylesheets/rails_admin/custom/theming.css.scss */
+#modality_name {
+  width: 50% !important;
+}
+
+/* line 20, app/assets/stylesheets/rails_admin/custom/theming.css.scss */
+#school_name {
+  width: 50% !important;
+}
+
+/* line 24, app/assets/stylesheets/rails_admin/custom/theming.css.scss */
+#school_address {
+  width: 70% !important;
+}
+
+/* line 28, app/assets/stylesheets/rails_admin/custom/theming.css.scss */
+#course_name {
+  width: 50% !important;
+}
+
+/* line 32, app/assets/stylesheets/rails_admin/custom/theming.css.scss */
+#teacher_name {
+  width: 50% !important;
+}
+
+/* line 35, app/assets/stylesheets/rails_admin/custom/theming.css.scss */
+#teacher_mail {
+  width: 50% !important;
+}
+
+/* line 39, app/assets/stylesheets/rails_admin/custom/theming.css.scss */
+#teacher_phone {
+  width: 20% !important;
 }
 
 /*

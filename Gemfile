@@ -11,8 +11,10 @@ gem 'sassc-rails', '= 2.1.2'
 gem 'rack-cors', '= 1.1.1'
 gem 'jwt', '= 2.6.0'
 gem 'bcrypt', '= 3.1.18'
-gem 'sprockets-rails'
+gem 'maskmoney-rails'
+gem 'phonemask-rails-brasil'
 #gem 'rubyrep'
+
 
 # gem "jbuilder"
 # gem "redis", "~> 4.0"
