@@ -28,8 +28,7 @@ class Teacher < ApplicationRecord
             end
             configure :phone do
                 label "Telefone"
-                html_attributes 'data-phone-mask':'true'
-                #partial "phone_partial"
+                partial "teacher_phone_partial"
             end
         end
     end
