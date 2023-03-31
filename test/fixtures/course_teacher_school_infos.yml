@@ -3,7 +3,9 @@
 one:
   course: one
   teacher_school_info: one
+  classroom_id: 1
 
 two:
   course: two
   teacher_school_info: two
+  classroom_id: 1

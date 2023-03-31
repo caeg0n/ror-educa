@@ -1,0 +1,10 @@
+<% naame = {"A":1,"B":2,"C":3} %>
+<div class="col-sm-2">
+    <select data-enumeration="true" placeholder="Buscar" name="classroom[name]" id="classroom_name" style="display: none;">
+        <% options = naame %>
+        <% options.each do |option| %>
+        <option value="<%= option[1] %>"><%= option[0] %></option>
+        <% end %>
+    </select>
+    <div class="input-group filtering-select" data-input-for="classroom_name"><input disabled type="text" class="form-control ra-filtering-select-input ui-autocomplete-input" style="" placeholder="Buscar" autocomplete="off" spellcheck="false" data-ms-editor="true"><span class="input-group-btn"><label class="btn btn-info dropdown-toggle" title="Show All Items" role="button"></label></span></div>
+</div>

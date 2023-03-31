@@ -26,6 +26,9 @@ gem 'phonemask-rails-brasil'
 #gem 'rails_admin-i18n'
 
 group :development, :test do
+  gem "binding_of_caller", '= 1.0.0'
+  gem 'byebug', '= 11.1.3'
+  gem 'better_errors'
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
 group :development do

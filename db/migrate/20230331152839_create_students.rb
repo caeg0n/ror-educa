@@ -6,6 +6,7 @@ class CreateStudents < ActiveRecord::Migration[7.0]
       t.string :inep
       t.integer :transportation
       t.integer :status
+      t.integer :classroom_id
 
       t.timestamps
     end

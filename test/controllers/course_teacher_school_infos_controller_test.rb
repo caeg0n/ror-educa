@@ -12,7 +12,7 @@ class CourseTeacherSchoolInfosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create course_teacher_school_info" do
     assert_difference("CourseTeacherSchoolInfo.count") do
-      post course_teacher_school_infos_url, params: { course_teacher_school_info: { course_id: @course_teacher_school_info.course_id, teacher_school_info_id: @course_teacher_school_info.teacher_school_info_id } }, as: :json
+      post course_teacher_school_infos_url, params: { course_teacher_school_info: { classroom_id: @course_teacher_school_info.classroom_id, course_id: @course_teacher_school_info.course_id, teacher_school_info_id: @course_teacher_school_info.teacher_school_info_id } }, as: :json
     end
 
     assert_response :created
@@ -24,7 +24,7 @@ class CourseTeacherSchoolInfosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update course_teacher_school_info" do
-    patch course_teacher_school_info_url(@course_teacher_school_info), params: { course_teacher_school_info: { course_id: @course_teacher_school_info.course_id, teacher_school_info_id: @course_teacher_school_info.teacher_school_info_id } }, as: :json
+    patch course_teacher_school_info_url(@course_teacher_school_info), params: { course_teacher_school_info: { classroom_id: @course_teacher_school_info.classroom_id, course_id: @course_teacher_school_info.course_id, teacher_school_info_id: @course_teacher_school_info.teacher_school_info_id } }, as: :json
     assert_response :success
   end
 

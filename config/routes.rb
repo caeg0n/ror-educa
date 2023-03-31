@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  resources :classrooms
   resources :course_teacher_school_infos
   resources :teacher_school_infos
-  resources :classrooms
+  resources :calendars
   resources :courses
   resources :teachers
+  resources :grades
   resources :schools
-  resources :modalities
   resources :localities
   resources :responsibles
   resources :students

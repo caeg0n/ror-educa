@@ -12,7 +12,7 @@ class ClassroomsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create classroom" do
     assert_difference("Classroom.count") do
-      post classrooms_url, params: { classroom: { exercise_id: @classroom.exercise_id, name: @classroom.name, school_id: @classroom.school_id } }, as: :json
+      post classrooms_url, params: { classroom: { classroom_type: @classroom.classroom_type, grade_id: @classroom.grade_id } }, as: :json
     end
 
     assert_response :created
@@ -24,7 +24,7 @@ class ClassroomsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update classroom" do
-    patch classroom_url(@classroom), params: { classroom: { exercise_id: @classroom.exercise_id, name: @classroom.name, school_id: @classroom.school_id } }, as: :json
+    patch classroom_url(@classroom), params: { classroom: { classroom_type: @classroom.classroom_type, grade_id: @classroom.grade_id } }, as: :json
     assert_response :success
   end
 

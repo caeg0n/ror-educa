@@ -1,7 +1,5 @@
 class School < ApplicationRecord
-  belongs_to :locality
-  belongs_to :modality
-  
+  belongs_to :locality  
   # I18n.t('admin.actions.new.title', model_label: 'Escola', gender_caracter: 'a')
   # def x
   #   I18n.t('admin.actions.new.title', gender_caracter: "o")
@@ -13,7 +11,7 @@ class School < ApplicationRecord
     weight -1
     navigation_icon 'fas fa-school'
     edit do
-      include_fields :name,:address,:locality,:modality
+      include_fields :name,:address,:locality
       configure :name do
         label "Nome"
       end

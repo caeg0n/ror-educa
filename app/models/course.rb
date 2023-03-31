@@ -1,6 +1,6 @@
 class Course < ApplicationRecord
     rails_admin do
-        weight -1
+        weight -2
         navigation_icon 'fas fa-book'
         list do
             configure :name do

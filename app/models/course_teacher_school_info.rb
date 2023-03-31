@@ -7,7 +7,7 @@ class CourseTeacherSchoolInfo < ApplicationRecord
     # weight -1
     navigation_icon 'fas fa-plus'
     parent "Teacher"
-    label "Atribuir materias"
+    label "Atribuir Materias"
     list do
       configure :course do
         label "Materia"

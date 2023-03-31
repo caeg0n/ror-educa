@@ -1,9 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  classroom_type: 1
-  grade: one
+  name: 1
+  school: one
+  exercise: one
 
 two:
-  classroom_type: 1
-  grade: two
+  name: 1
+  school: two
+  exercise: two

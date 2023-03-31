@@ -12,7 +12,7 @@ class TeacherSchoolInfo < ApplicationRecord
     weight -1
     navigation_icon 'fas fa-plus'
     parent "School"
-    label "Atribuir professores"
+    label "Atribuir Professores"
     list do
       configure :school do
         label "Escola"

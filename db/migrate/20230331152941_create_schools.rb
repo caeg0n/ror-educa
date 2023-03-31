@@ -4,7 +4,6 @@ class CreateSchools < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :address
       t.references :locality, null: false, foreign_key: true
-      t.references :modality, null: false, foreign_key: true
 
       t.timestamps
     end

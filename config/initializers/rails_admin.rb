@@ -8,7 +8,7 @@
 
   config.included_models = ['Student','School','Locality','Modality','Teacher','Course',
                             'TeacherSchoolInfo','CourseTeacherSchoolInfo','Responsible',
-                            'Exercise','Classroom']
+                            'Exercise','Classroom','Grade','ClassroomStudentInfo']
   config.model 'Student' do
     label 'Aluno'
     label_plural 'Alunos'
@@ -21,9 +21,9 @@
     label 'Localidade'
     label_plural 'Localidades'
   end
-  config.model 'Modality' do
-    label 'Modalidade'
-    label_plural 'Modalidades'
+  config.model 'Grade' do
+    label 'Série'
+    label_plural 'Séries'
   end
   config.model 'Teacher' do
     label 'Professor'
@@ -34,16 +34,32 @@
     label_plural 'Materias'
   end
   config.model 'Responsible' do
-    label 'Responsavel'
-    label_plural 'Responsaveis'
+    label 'Atribuir Responsavel'
+    label_plural 'Atribuir Responsaveis'
   end
   config.model 'Exercise' do
     label 'Exercicio'
     label_plural 'Exercicios'
   end
+
   config.model 'Classroom' do
-    label 'Classe'
-    label_plural 'Classes'
+    label 'Turma'
+    label_plural 'Turmas'
+    navigation_icon 'fas fa-people-roof'
+    edit do
+      # configure :exercise do
+      #   # inline_add false
+      #   # inline_edit false
+      #   # partial "teste_partial"
+      # end
+    end
+  end
+
+  config.model 'ClassroomStudentInfo' do
+    label 'Atribuir Aluno'
+    label_plural 'Atribuir Alunos'
+    parent 'Classroom'
+    navigation_icon 'fas fa-plus'
   end
 
   ### Popular gems integration

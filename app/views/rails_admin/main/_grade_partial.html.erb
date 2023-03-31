@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-sm-8">
+    <select data-filteringselect="true" data-options="{&quot;xhr&quot;:false,&quot;remote_source&quot;:&quot;/grade?associated_collection=grade\u0026compact=true\u0026current_action=create\u0026source_abstract_model=classroom&quot;}" placeholder="Buscar" name="classroom[grade_id]" id="classroom_grade_id" style="display: none;"><option value="" label=" "></option>
+        <%
+            resp = [] 
+            result = Grade.all
+            result.each do |r|
+                res = r.name.to_s + "/"+School.find(r.school_id).name+"/"+Exercise.find(r.exercise_id).year.to_s
+                resp << res 
+            end 
+        %>
+
+        <% options = resp %>
+        <% options.each do |option| %>
+        <option value="<%= option %>"><%= option %></option>
+        <% end %>
+    </select>
+    <div class="input-group filtering-select" data-input-for="classroom_grade_id">
+        <input type="text" class="form-control ra-filtering-select-input ui-autocomplete-input" style="" placeholder="Buscar" required="required" autocomplete="off" spellcheck="false" data-ms-editor="true"><span class="input-group-btn"><label class="btn btn-info dropdown-toggle" title="Show All Items" role="button"></label></span>
+    </div>
+  </div>
+  <div class="col-sm-8 mt-2 mt-md-0 modal-actions">
+  </div>
+</div>
+<%
+=begin%>
+ <div class="col-sm-8">
+    <select data-filteringselect="true" placeholder="Buscar" required="required" name="classroom[grade_id]" id="classroom_grade_id">
+        <%# binding.pry %>
+        <% options = ["Apple", "Banana", "Cherry", "Durian"] %>
+        <% options.each do |option| %>
+        <option value="<%= option %>"><%= option %></option>
+        <% end %>
+</br>
+</div> 
+<%
+=end%>

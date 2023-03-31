@@ -1,4 +1,13 @@
 class Exercise < ApplicationRecord
+    before_save :do_something_on_create
+
+    def do_something_on_create
+         errors.add(:base, "Some error message here")
+    end
+
+    def title
+        self.year
+    end
 
 rails_admin do
     weight -3

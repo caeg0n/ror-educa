@@ -9,20 +9,19 @@ Course.destroy_all
 TeacherSchoolInfo.destroy_all
 Teacher.destroy_all
 School.destroy_all
-Modality.destroy_all
+Grade.destroy_all
 Locality.destroy_all
 
-10.times do |n|
-    Modality.create(name:Faker::Color.color_name)
-end
+# 10.times do |n|
+#     Grade.create(name:Faker::Color.color_name)
+# end
 20.times do |n|
     Locality.create(name:Faker::Address.city)
 end
 50.times do |n|
     School.create(name:Faker::Educator.university,
                   address:Faker::Address.street_address,
-                  locality_id:rand(Locality.first.id..Locality.last.id),
-                  modality_id:rand(Modality.first.id..Modality.last.id))
+                  locality_id:rand(Locality.first.id..Locality.last.id))
 end
 2000.times do |n|
     Student.create(name:Faker::Name.name_with_middle,

@@ -10,23 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_25_184150) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_31_153207) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "classrooms", force: :cascade do |t|
-    t.string "name"
+  create_table "calendars", force: :cascade do |t|
     t.bigint "exercise_id", null: false
-    t.bigint "school_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["exercise_id"], name: "index_classrooms_on_exercise_id"
-    t.index ["school_id"], name: "index_classrooms_on_school_id"
+    t.index ["exercise_id"], name: "index_calendars_on_exercise_id"
+  end
+
+  create_table "classrooms", force: :cascade do |t|
+    t.integer "classroom_type"
+    t.bigint "grade_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["grade_id"], name: "index_classrooms_on_grade_id"
   end
 
   create_table "course_teacher_school_infos", force: :cascade do |t|
     t.bigint "course_id", null: false
     t.bigint "teacher_school_info_id", null: false
+    t.integer "classroom_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["course_id"], name: "index_course_teacher_school_infos_on_course_id"
@@ -45,13 +51,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_25_184150) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "localities", force: :cascade do |t|
-    t.string "name"
+  create_table "grades", force: :cascade do |t|
+    t.integer "name"
+    t.bigint "school_id", null: false
+    t.bigint "exercise_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["exercise_id"], name: "index_grades_on_exercise_id"
+    t.index ["school_id"], name: "index_grades_on_school_id"
   end
 
-  create_table "modalities", force: :cascade do |t|
+  create_table "localities", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -70,11 +80,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_25_184150) do
     t.string "name"
     t.string "address"
     t.bigint "locality_id", null: false
-    t.bigint "modality_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["locality_id"], name: "index_schools_on_locality_id"
-    t.index ["modality_id"], name: "index_schools_on_modality_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -83,6 +91,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_25_184150) do
     t.string "inep"
     t.integer "transportation"
     t.integer "status"
+    t.integer "classroom_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -112,13 +121,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_25_184150) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "classrooms", "exercises"
-  add_foreign_key "classrooms", "schools"
+  add_foreign_key "calendars", "exercises"
+  add_foreign_key "classrooms", "grades"
   add_foreign_key "course_teacher_school_infos", "courses"
   add_foreign_key "course_teacher_school_infos", "teacher_school_infos"
+  add_foreign_key "grades", "exercises"
+  add_foreign_key "grades", "schools"
   add_foreign_key "responsibles", "students"
   add_foreign_key "schools", "localities"
-  add_foreign_key "schools", "modalities"
   add_foreign_key "teacher_school_infos", "schools"
   add_foreign_key "teacher_school_infos", "teachers"
 end
