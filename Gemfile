@@ -13,9 +13,9 @@ gem 'jwt', '= 2.6.0'
 gem 'bcrypt', '= 3.1.18'
 gem 'maskmoney-rails'
 gem 'phonemask-rails-brasil'
+#gem 'acts-as-taggable-on', '~> 9.0'
+
 #gem 'rubyrep'
-
-
 # gem "jbuilder"
 # gem "redis", "~> 4.0"
 # gem "kredis"

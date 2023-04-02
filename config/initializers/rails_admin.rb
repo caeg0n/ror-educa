@@ -1,4 +1,5 @@
- RailsAdmin.config do |config|
+RailsAdmin.config do |config|
+  
   # config.parent_controller = RailsAdmin::RailsAdminAbstractController.to_s
   config.asset_source = :sprockets
   config.main_app_name = ["SEMED -", " SISTEMA DE INFORMAÇÃO 2023 - REDE"] 
@@ -47,6 +48,17 @@
     label_plural 'Turmas'
     navigation_icon 'fas fa-people-roof'
     edit do
+      field :classroom_type
+      field :grade
+      field :student
+      field :course_teacher_school_info
+      # field :student do
+      #   associated_collection_scope do
+      #     proc do |scope|
+      #       scope.limit(1000)
+      #     end
+      #   end
+      # end
       # configure :exercise do
       #   # inline_add false
       #   # inline_edit false
