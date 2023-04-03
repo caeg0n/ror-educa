@@ -5,6 +5,24 @@ class Classroom < ApplicationRecord
   
   enum classroom_type: {"A":1,"B":2,"C":3}
 
+  rails_admin do
+    edit do
+      
+      # configure :classroom_type do
+      #   label "Tipo de Classe"
+      # end
+      # configure :grade do
+      #   label "Série"
+      # end
+      # configure :student do
+      #   label "Alunos"
+      # end
+      # configure :course_teacher_school_info do
+      #   label "Professores"
+      # end
+    end
+  end
+
   # rails_admin do
       
   #     weight 1

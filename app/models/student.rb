@@ -1,6 +1,7 @@
 class Student < ApplicationRecord
    enum transportation: {"SIM":1,"NÃO":2}
    enum status: {"REPROVADO":1,"REPROVADO POR FALTA":2}
+
    
    rails_admin do
       navigation_icon 'fas fa-users'

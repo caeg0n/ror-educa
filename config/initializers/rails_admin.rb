@@ -51,7 +51,7 @@ RailsAdmin.config do |config|
       field :classroom_type
       field :grade
       field :student
-      field :course_teacher_school_info
+      field :course_teacher_school_info 
       # field :student do
       #   associated_collection_scope do
       #     proc do |scope|
